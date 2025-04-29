@@ -1,5 +1,5 @@
 'use client'
-import Image from "next/image";
+
 import { Card, CardContent } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
@@ -25,9 +25,10 @@ export default function Home() {
       {/* Animated Background Shapes */}
       <motion.div
         className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 1 , }}
+        animate={{ opacity: 1 ,}}
         transition={{ duration: 1 }}
+
       >
         <div className="absolute w-72 h-72 bg-purple-500 rounded-full opacity-20 blur-3xl animate-pulse top-10 left-10" />
         <div className="absolute w-96 h-96 bg-blue-500 rounded-full opacity-20 blur-3xl animate-pulse bottom-10 right-10" />
@@ -86,7 +87,7 @@ export default function Home() {
             <li>Flexible online and on-campus options</li>
           </ul>
           <div className="flex gap-4">
-            <Button variant="outline" className="border-purple-600 text-purple-300 hover:bg-purple-600 hover:text-white transition">
+            <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition">
               Learn More
             </Button>
             <Button className="bg-blue-600 hover:bg-blue-700 transition">Contact Us</Button>
