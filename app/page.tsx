@@ -120,7 +120,7 @@ export default function Home() {
             <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition">
               Learn More
             </Button>
-            <Link href={'tel:+916261452510'} className="bg-blue-600 hover:bg-blue-700 transition px-4 py-2 rounded-lg text-sm border border-white/50">Call Us</Link>
+            <Link href={'tel:+916261452510'} className="bg-blue-600 hover:bg-blue-700 transition px-4 py-2 rounded-lg text-sm border border-white/50">Contact Us</Link>
             {/* <Button className="bg-blue-600 hover:bg-blue-700 transition">Call Us</Button> */}
           </div>
         </div>
