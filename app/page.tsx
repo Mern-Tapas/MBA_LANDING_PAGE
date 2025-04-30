@@ -1,11 +1,22 @@
 'use client'
-
-import { Card, CardContent } from "@/components/ui/Card";
+import Image from "next/image";
+import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import Link from "next/link";
+import logo from '@/public/images/logo.jpeg'
 
 export default function Home() {
 
@@ -16,7 +27,7 @@ export default function Home() {
     message: "",
   });
 
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -25,8 +36,8 @@ export default function Home() {
       {/* Animated Background Shapes */}
       <motion.div
         className="absolute inset-0 z-0"
-        initial={{ opacity: 1 , }}
-        animate={{ opacity: 1 ,}}
+        initial={{ opacity: 1, }}
+        animate={{ opacity: 1, }}
         transition={{ duration: 1 }}
 
       >
@@ -38,8 +49,13 @@ export default function Home() {
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left - Form */}
         <Card className="bg-white/10 backdrop-blur-md border-white/20 p-6 rounded-2xl">
+        <CardHeader>
+          <div className="h-[80px] w-[80px] rounded-full overflow-hidden">
+          <Image src={logo} height={300} width={300} alt="university connect" />
+          </div>
+        </CardHeader>
           <CardContent className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Apply for Our MBA Program</h2>
+            <h2 className="text-2xl font-bold text-white mb-8">Apply for Our MBA Program</h2>
             <Input
               name="name"
               value={form.name}
@@ -54,20 +70,34 @@ export default function Home() {
               placeholder="Email Address"
               className="bg-white/20 text-white placeholder-white/70"
             />
+            <Select>
+              <SelectTrigger className="bg-white/20 text-white placeholder-white/70 w-full">
+                <SelectValue placeholder="Select Course" />
+              </SelectTrigger>
+              <SelectContent className="">
+                <SelectGroup>
+                  <SelectLabel>Fruits</SelectLabel>
+                  <SelectItem className="" value="MBA">MBA</SelectItem>
+                  <SelectItem value="BBA">BBA</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
             <Input
+            type="number"
               name="phone"
               value={form.phone}
               onChange={handleChange}
               placeholder="Phone Number"
               className="bg-white/20 text-white placeholder-white/70"
             />
-            <Textarea
+            {/* <Textarea
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Tell us why you're interested"
+              placeholder="Tell us why you're interested | optional"
               className="bg-white/20 text-white placeholder-white/70"
-            />
+            /> */}
             <Button className="w-full bg-purple-600 hover:bg-purple-700 transition">Apply Now</Button>
           </CardContent>
         </Card>
@@ -90,7 +120,8 @@ export default function Home() {
             <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition">
               Learn More
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 transition">Contact Us</Button>
+            <Link href={'tel:+916261452510'} className="bg-blue-600 hover:bg-blue-700 transition px-4 py-2 rounded-lg text-sm border border-white/50">Call Us</Link>
+            {/* <Button className="bg-blue-600 hover:bg-blue-700 transition">Call Us</Button> */}
           </div>
         </div>
       </div>
