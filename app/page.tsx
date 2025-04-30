@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
